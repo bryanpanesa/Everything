@@ -7,7 +7,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-	show: boolean = true;
+	price = 999.94;
+	score = 10/42;
+	day = new Date();
+
+	// show: boolean = true;
 	ninjas = [
 		{ name: 'Bryan', belt: 'gold' },
 		{ name: 'zai', belt: 'silver' },

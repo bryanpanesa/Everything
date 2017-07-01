@@ -1,6 +1,15 @@
-<p>Directory</p>
-<hr>
-
+<div>
+	<p>{{price | currency:'PHP'}}</p>
+	<p>{{score | percent }}</p>
+	<p>{{day | date: "MM/dd/yy hh:mm"}}</p>
+	<p>{{day | date: "fullDate"}}</p>
+	<p>{{day | date: "shortDate"}}</p>
+	<p>{{day | date: "mediumDate"}}</p>
+</div>
+<form id="filter">
+	<label>Filter ninjas by name</label>
+	<input type="text">
+</form>
 <ul id="ninja-listing">
 	<li *ngFor="let ninja of ninjas">
 		<div class="single-ninja">
@@ -10,8 +19,4 @@
 	</li>
 </ul>
 
-<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
-    show = {{show}}
-    <br>
-    <div *ngIf="show">Text to show</div>
 
