@@ -1,0 +1,19 @@
+<header>
+	<h1 class="title">
+	{{title}}
+		<span class="subtitle">
+		{{subtitle}}
+		</span>
+	</h1>
+	<div class="myLogo"></div>
+	<nav>
+		<ul>
+			<li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+			<li><a routerLink="/directory" routerLinkActive="active">Directory</a></li>
+		</ul>
+	</nav>
+</header>
+<section id="main">
+	<!-- <app-home [ninjas]="ninjas" (onYell)="yell($event)">Bebe Zai...</app-home> -->
+	<router-outlet></router-outlet>
+</section>
