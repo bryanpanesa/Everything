@@ -1,22 +1,14 @@
-<div>
-	<p>{{price | currency:'PHP'}}</p>
-	<p>{{score | percent }}</p>
-	<p>{{day | date: "MM/dd/yy hh:mm"}}</p>
-	<p>{{day | date: "fullDate"}}</p>
-	<p>{{day | date: "shortDate"}}</p>
-	<p>{{day | date: "mediumDate"}}</p>
-</div>
 <form id="filter">
 	<label>Filter ninjas by name</label>
-	<input type="text">
+	<input type="text" [(ngModel)]="term"  name="filterer">
 </form>
 <ul id="ninja-listing">
-	<li *ngFor="let ninja of ninjas">
+	<li *ngFor="let ninja of ninjas | filter: term">
 		<div class="single-ninja">
 			<span [ngStyle]="{background: ninja.belt}">{{ninja.belt}} belt</span>
-			<h3>{{ninja.name | uppercase | slice:1:3}}</h3>
+			<h3>{{ninja.name}}</h3>
 		</div>
 	</li>
 </ul>
 
-
+<button [ngClass]="{'displayed': true}" (click)="logMe()">Logmebebe</button>

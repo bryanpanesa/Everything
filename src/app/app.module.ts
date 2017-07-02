@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { DirectoryComponent } from './directory/directory.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { FilterPipe } from './filter.pipe';
+import { LoggingService } from './logging.service';
 
 const appRoutes: Routes = [
   {
@@ -37,6 +39,7 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     DirectoryComponent,
+    FilterPipe,
     PagenotfoundComponent
   ],
   imports: [
@@ -45,7 +48,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

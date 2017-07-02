@@ -1,0 +1,22 @@
+header {
+	position: relative;
+}
+.logBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 15px 20px;
+	border-radius: 3px;
+	border: none;
+	letter-spacing: 0.1em;
+	color: #fff;
+}
+.logBtn:hover {
+	cursor: pointer;
+}
+.logoutBtn {
+	background: #cc3333;
+}
+.loginBtn {
+	background: #66cc66;
+}

@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Everything';
   subtitle = 'Keeping your brain intact in one place.';
-
+  day = new Date();
+  logoutClick = true;
+  loginNow(){
+  	this.logoutClick = false;
+  }
+  logoutNow(){
+  	this.logoutClick = true;
+  }
 }

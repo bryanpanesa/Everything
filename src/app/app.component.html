@@ -1,4 +1,13 @@
 <header>
+<div class="userLogin">
+	<p *ngIf="logoutClick; then logout else login">zai</p>
+	<ng-template #login>
+		<button [ngClass]="{'logBtn': true,'logoutBtn': true}" (click)="logoutNow()">Logout</button>
+	</ng-template>
+	<ng-template #logout>
+		<button [ngClass]="{'logBtn': true, 'loginBtn':true}" (click)="loginNow()">Login</button>
+	</ng-template>
+</div>
 	<h1 class="title">
 	{{title}}
 		<span class="subtitle">

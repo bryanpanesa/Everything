@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-directory',
@@ -7,25 +8,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-	price = 999.94;
-	score = 10/42;
-	day = new Date();
-
 	// show: boolean = true;
-	ninjas = [
-		{ name: 'Bryan', belt: 'gold' },
-		{ name: 'zai', belt: 'silver' },
-		{ name: 'bry', belt: 'pink' }
-	];
+	
 	name = '';
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private logger: LoggingService) {
     this.name = this.route.snapshot.params['name'];
     console.log(this.route.snapshot.params);
-    // this.route.params.subscribe( params => console.log(params) );
 	}
 
+  logMe() {
+      this.logger.log();
+  }
+
   ngOnInit() {
+    
   }
 
 }
