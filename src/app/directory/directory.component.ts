@@ -24,16 +24,16 @@ export class DirectoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.fetchData().subscribe(
-        data => this.ninjas = data
-      );
+    // this.dataService.fetchData().subscribe(
+    //     data => this.ninjas = data
+    //   );
 
     this.fbGetData();
   }
 
   fbGetData() {
     firebase.database().ref('/').on('child_added', (snapshot) => {
-      console.log(snapshot.val())
+      this.ninjas.push(snapshot.val())
     });
   }
 
