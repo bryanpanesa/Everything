@@ -13,6 +13,8 @@ export class DirectoryComponent implements OnInit {
 	// show: boolean = true;
 	name = '';
   ninjas = [];
+  index: any;
+  keyToRemove: any;
 
   constructor(private route: ActivatedRoute, private logger: LoggingService, private dataService: DataService) {
     this.name = this.route.snapshot.params['name'];
@@ -29,15 +31,24 @@ export class DirectoryComponent implements OnInit {
     //   );
 
     this.fbGetData();
+    // this.index = this.ninjas.findIndex(x => x.name=="Yoshi");
+    // console.log(this.index);
   }
 
   fbGetData() {
     firebase.database().ref('/').on('child_added', (snapshot) => {
-      this.ninjas.push(snapshot.val())
+      this.ninjas.push(snapshot.val()),
+      console.log(snapshot.val())
     });
   }
 
   fbPostData(name, belt) {
     firebase.database().ref('/').push({ name: name, belt: belt});
   }
+
+  fbRemoveData() {
+    this.keyToRemove = "KoceFF6QssXm_Fc_ROF";
+    firebase.database().ref('/' + this.keyToRemove).set(null);
+  }
+  
 }
