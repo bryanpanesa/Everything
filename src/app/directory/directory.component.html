@@ -10,5 +10,12 @@
 		</div>
 	</li>
 </ul>
-
+<!-- Login/Logout button -->
 <button [ngClass]="{'displayed': true}" (click)="logMe()">Logmebebe</button>
+
+<form id="add-ninja">
+	<input type="text" name="name" [(ngModel)]="name" />
+	<input type="text" name="belt" [(ngModel)]="belt" />
+
+	<button (click)="fbPostData(name, belt)">Add Ninja</button>
+</form>

@@ -15,14 +15,7 @@ h1,h2,h3{
   font-weight: normal;
   margin-top: 0;
 }
-.myLogo{
-  text-indent: -10000px;
-  background: url(assets/logo.png) no-repeat center bottom;
-  background-size: 100%;
-  width: 140px;
-  height: 100px;
-  margin: 0 auto;
-}
+
 a.active {
   color: #fff;
 }
